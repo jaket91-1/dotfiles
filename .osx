@@ -53,6 +53,9 @@ if [[ "$RUN_AS_ROOT" = true ]]; then
   systemsetup -setrestartfreeze on
 fi
 
+# Set dark mode
+defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
+
 # Disable smart quotes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
@@ -95,7 +98,7 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 ###############################################################################
 
 # Save screenshots to Downloads folder.
-defaults write com.apple.screencapture location -string "${HOME}/Downloads"
+defaults write com.apple.screencapture location -string "${HOME}/Documents/Screenshots"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
