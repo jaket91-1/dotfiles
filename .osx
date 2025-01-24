@@ -36,6 +36,9 @@ fi
 # General UI/UX                                                               #
 ###############################################################################
 
+# Show seconds on the clock
+defaults write com.apple.menuextra.clock "ShowSeconds" -bool true
+
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
@@ -83,12 +86,12 @@ defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool fa
 #defaults write NSGlobalDomain ContextMenuGesture -int 1
 
 # Disable press-and-hold for keys in favor of key repeat
-#defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Set a blazingly fast keyboard repeat rate, and make it happen more quickly.
 # (The KeyRepeat option requires logging out and back in to take effect.)
-#defaults write NSGlobalDomain InitialKeyRepeat -int 20
-#defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 20
+defaults write NSGlobalDomain KeyRepeat -int 1
 
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
@@ -267,6 +270,21 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 
 # Disable continuous spell checking
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
+
+###############################################################################
+# Clocker Settings                                                            #
+###############################################################################
+
+defaults write com.abhishek.Clocker "com.abhishek.menubarCompactMode" -bool false
+defaults write com.abhishek.Clocker "com.abhishek.showOnboardingFlow" -bool true
+defaults write com.abhishek.Clocker is24HourFormatSelected -bool true
+defaults write com.abhishek.Clocker startAtLogin -bool true
+
+###############################################################################
+# Amphetamine Settings                                                        #
+###############################################################################
+
+defaults write com.if.Amphetamine "Icon Style" -int 7
 
 ###############################################################################
 # Kill/restart affected applications                                          #
