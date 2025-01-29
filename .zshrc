@@ -92,3 +92,5 @@ alias kgss='kubectl get secrets | sort'
 alias kbad='kgpa > /tmp/badpods; egrep -v "NAME|Running|Completed" /tmp/badpods > /tmp/badpods1; egrep "0/" /tmp/badpods | grep -v "Completed" >> /tmp/badpods1; sort -u /tmp/badpods1; echo "`sort -u /tmp/badpods1|wc -l` bad pods"'
 alias kw="kubectl config current-context"
 alias kge="kubectl get events --sort-by='.metadata.creationTimestamp' -A"
+
+export GPG_TTY=$(tty)
